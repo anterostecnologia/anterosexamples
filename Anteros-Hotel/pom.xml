@@ -1,0 +1,218 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.anteros</groupId>
+	<artifactId>Anteros-Hotel</artifactId>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+	<name>Anteros-Hotel Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<spring.versao>4.1.0.RELEASE</spring.versao>
+		<jackson.versao>2.3.4</jackson.versao>
+		<java.versao>1.8</java.versao>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bintray.subject>edson</bintray.subject>
+		<bintray.repo>maven</bintray.repo>
+		<springframework.version>4.1.6.RELEASE</springframework.version>
+		<springsecurity.version>4.0.1.RELEASE</springsecurity.version>
+	</properties>
+	<dependencies>
+		<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${springsecurity.version}</version>
+		</dependency>
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.versao}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.versao}</version>
+		</dependency>
+		<!-- LOG4J -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- ANTEROS -->
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Spring-Web</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Persistence</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Spring</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Core</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Persistence-Serialization</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Persistence-Apt</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Security</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Security-Spring</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Spring-Swagger</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.36</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-JSONDoc-SpringMVC</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-JSONDoc-UI-Webjar</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<target>${java.versao}</target>
+					<source>${java.versao}</source>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>maven-processor-plugin</artifactId>
+				<version>2.2.4</version>
+				<executions>
+					<execution>
+						<id>process</id>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<outputDirectory>${project.build.directory}/generated-sources/annotations</outputDirectory>
+							<processors>
+								<processor>br.com.anteros.persistence.apt.AnterosPersistenceAnnotationProcessor</processor>
+							</processors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
