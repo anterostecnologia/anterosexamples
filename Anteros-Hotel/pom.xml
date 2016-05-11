@@ -5,7 +5,7 @@
 	<artifactId>Anteros-Hotel</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
-	<name>Anteros-Hotel Maven Webapp</name>
+	<name>Anteros Hotel</name>
 	<url>http://maven.apache.org</url>
 
 
@@ -168,6 +168,12 @@
 			<artifactId>Anteros-JSONDoc-UI-Webjar</artifactId>
 			<version>[1.0.0,)</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Generator-Maven-Plugin</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -227,6 +233,7 @@
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
+						    <enabled>false</enabled>
 							<sourcesToScanEntities>
 								<source>${basedir}/src/main/java</source>
 							</sourcesToScanEntities>
@@ -237,6 +244,20 @@
 							<packageDestination>br.com.anteros.demo.hotel.teste</packageDestination>
 							<includeSecurity>true</includeSecurity>
 							<generateRepository>true</generateRepository>
+							<generateJavaConfiguration>true</generateJavaConfiguration>
+							<generateSwaggerConfiguration>true</generateSwaggerConfiguration>
+							<generateJSONDocConfiguration>true</generateJSONDocConfiguration>
+							<packageScanComponentsList>
+							   <package>br.com.anteros.demo.hotel.repository.impl</package>
+							   <package>br.com.anteros.demo.hotel.service.impl</package>
+		                       <package>br.com.anteros.demo.hotel.controller</package>
+							</packageScanComponentsList>
+							<packageScanEntity>br.com.anteros.demo.hotel.model*</packageScanEntity>
+							<propertiesFile>WEB-INF/anterosHotel.properties</propertiesFile>
+							<packageScanJSONDocList>
+							   <package>br.com.anteros.demo.hotel.controller</package>
+							   <package>br.com.anteros.demo.hotel.model</package>
+							</packageScanJSONDocList>
 						</configuration>
 					</execution>
 				</executions>

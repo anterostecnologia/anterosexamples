@@ -1,7 +1,5 @@
 package br.com.anteros.demo.hotel.config.doc;
 
-import java.util.ArrayList;
-
 import org.springframework.context.annotation.Configuration;
 
 import br.com.anteros.jsondoc.springmvc.config.AnterosJSONDocConfiguration;
@@ -9,12 +7,11 @@ import br.com.anteros.jsondoc.springmvc.config.AnterosJSONDocConfiguration;
 @Configuration
 public class AnterosHotelJSONDocConfiguration extends AnterosJSONDocConfiguration {
 
+	private String[] packages = {"br.com.anteros.demo.hotel.controller","br.com.anteros.demo.hotel.model"};
+	
 	@Override
 	public String[] packagesSourceModelAndController() {
-		ArrayList<String> packages = new ArrayList<>();
-		packages.add("br.com.anteros.demo.hotel.controller");
-		packages.add("br.com.anteros.demo.hotel.model");
-		return packages.toArray(new String[] {});
+		return packages;
 	}
 
 	@Override
