@@ -5,6 +5,7 @@ import javax.servlet.ServletContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
 import br.com.anteros.demo.hotel.config.doc.AnterosHotelJSONDocConfiguration;
 import br.com.anteros.demo.hotel.config.doc.AnterosHotelSwaggerConfiguration;
@@ -64,6 +65,10 @@ public class AnterosHotelMvcConfiguration extends AnterosSpringSecurityMvcConfig
 	@Override
 	public Class<?> globalMethodSecurityConfigurationClass() {
 		return AnterosHotelGlobalMethodSecurityConfiguration.class;
+	}
+
+	@Override
+	public void addServlet(ServletContext servletContext, AnnotationConfigWebApplicationContext appContext) {
 	}
 
 

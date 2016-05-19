@@ -224,7 +224,7 @@
 			<plugin>
 				<groupId>br.com.anteros</groupId>
 				<artifactId>Anteros-Generator-Maven-Plugin</artifactId>
-				<version>1.0.0</version>
+				<version>1.0.1</version>
 				<executions>
 					<execution>
 						<id>generate</id>
@@ -234,16 +234,12 @@
 						<phase>generate-sources</phase>
 						<configuration>
 						    <enabled>false</enabled>
-							<sourcesToScanEntities>
-								<source>${basedir}/src/main/java</source>
-							</sourcesToScanEntities>
-							<packageBaseList>
-								<packageBase>br.com.anteros.demo.hotel.model</packageBase>
-							</packageBaseList>
 							<sourceDestination>${basedir}/src/main/java</sourceDestination>
 							<packageDestination>br.com.anteros.demo.hotel.teste</packageDestination>
 							<includeSecurity>true</includeSecurity>
 							<generateRepository>true</generateRepository>
+							<generateController>true</generateController>
+							<generateService>true</generateService>
 							<generateJavaConfiguration>true</generateJavaConfiguration>
 							<generateSwaggerConfiguration>true</generateSwaggerConfiguration>
 							<generateJSONDocConfiguration>true</generateJSONDocConfiguration>
@@ -265,8 +261,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -283,7 +278,7 @@
 											Anteros-Generator-Maven-Plugin
 										</artifactId>
 										<versionRange>
-											[1.0.0,)
+											[1.0.1,)
 										</versionRange>
 										<goals>
 											<goal>generate</goal>

@@ -6,7 +6,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="Anteros-Spring-Web-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring-Web/Anteros-Spring-Web">
+        <dependent-module archiveName="Anteros-Spring-Web-1.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring-Web/Anteros-Spring-Web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="Anteros-Persistence-Core-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Persistence-Core/Anteros-Persistence-Core">
@@ -21,7 +21,7 @@
         <dependent-module archiveName="Anteros-XML-Helper-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-XML-Helper/Anteros-XML-Helper">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Anteros-Spring-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring/Anteros-Spring">
+        <dependent-module archiveName="Anteros-Spring-1.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring/Anteros-Spring">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="Anteros-Core-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Core/Anteros-Core">
@@ -51,7 +51,7 @@
         <dependent-module archiveName="Anteros-JSONDoc-UI-Webjar-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-JSONDoc-UI-Webjar/Anteros-JSONDoc-UI-Webjar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Anteros-Generator-Maven-Plugin-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Generator-Maven-Plugin/Anteros-Generator-Maven-Plugin">
+        <dependent-module archiveName="Anteros-Generator-Maven-Plugin-1.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Generator-Maven-Plugin/Anteros-Generator-Maven-Plugin">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="Anteros-Hotel"/>
