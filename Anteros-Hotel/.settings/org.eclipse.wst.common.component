@@ -3,57 +3,8 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/target/generated-sources/annotations"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="Anteros-Spring-Web-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring-Web/Anteros-Spring-Web">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Persistence-Core-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Persistence-Core/Anteros-Persistence-Core">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Web-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Web/Anteros-Web">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Persistence-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Persistence/Anteros-Persistence">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-XML-Helper-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-XML-Helper/Anteros-XML-Helper">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Spring-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring/Anteros-Spring">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Core-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Core/Anteros-Core">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Persistence-Serialization-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Persistence-Serialization/Anteros-Persistence-Serialization">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Persistence-Apt-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Persistence-Apt/Anteros-Persistence-Apt">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Security-1.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Security/Anteros-Security">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Security-Spring-1.0.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Security-Spring/Anteros-Security-Spring">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Spring-Swagger-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Spring-Swagger/Anteros-Spring-Swagger">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-JSONDoc-SpringMVC-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-JSONDoc-SpringMVC/Anteros-JSONDoc-SpringMVC">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-JSONDoc-Core-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-JSONDoc-Core/Anteros-JSONDoc-Core">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-JSONDoc-UI-Webjar-1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-JSONDoc-UI-Webjar/Anteros-JSONDoc-UI-Webjar">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
-        <dependent-module archiveName="Anteros-Generator-Maven-Plugin-1.0.2.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/Anteros-Generator-Maven-Plugin/Anteros-Generator-Maven-Plugin">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="context-root" value="Anteros-Hotel"/>
         <property name="java-output-path" value="/Anteros-Hotel/target/classes"/>
     </wb-module>

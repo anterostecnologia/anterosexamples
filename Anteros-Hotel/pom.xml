@@ -201,7 +201,7 @@
 			<plugin>
 				<groupId>br.com.anteros</groupId>
 				<artifactId>Anteros-Generator-Maven-Plugin</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.2</version>
 				<executions>
 					<execution>
 						<id>generate</id>
@@ -255,7 +255,7 @@
 											Anteros-Generator-Maven-Plugin
 										</artifactId>
 										<versionRange>
-											[1.0.1,)
+											[1.0.2,)
 										</versionRange>
 										<goals>
 											<goal>generate</goal>
