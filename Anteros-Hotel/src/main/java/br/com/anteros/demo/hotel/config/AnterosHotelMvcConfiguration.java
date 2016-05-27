@@ -6,6 +6,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 import br.com.anteros.demo.hotel.config.doc.AnterosHotelJSONDocConfiguration;
 import br.com.anteros.demo.hotel.config.doc.AnterosHotelSwaggerConfiguration;
@@ -13,6 +18,7 @@ import br.com.anteros.demo.hotel.listener.AnterosHotelApplicationContextListener
 import br.com.anteros.security.spring.config.AnterosSpringSecurityMvcConfiguration;
 
 @Configuration
+@EnableWebMvc
 @ComponentScan(basePackages = { "br.com.anteros.demo.hotel.repository.impl", "br.com.anteros.demo.hotel.service.impl",
 		"br.com.anteros.demo.hotel.controller" })
 public class AnterosHotelMvcConfiguration extends AnterosSpringSecurityMvcConfiguration implements WebApplicationInitializer {
@@ -66,6 +72,20 @@ public class AnterosHotelMvcConfiguration extends AnterosSpringSecurityMvcConfig
 	public Class<?> globalMethodSecurityConfigurationClass() {
 		return AnterosHotelGlobalMethodSecurityConfiguration.class;
 	}
+	
+	@Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setPrefix("/");
+        viewResolver.setSuffix(".html");
+        registry.viewResolver(viewResolver);
+    }
+ 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**").addResourceLocations("/");
+    }
 
 	@Override
 	public void addServlet(ServletContext servletContext, AnnotationConfigWebApplicationContext appContext) {
