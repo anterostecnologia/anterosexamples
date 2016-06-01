@@ -1,40 +1,28 @@
 angular.module('panels', [])
-  .directive('simplePanel', function(){//panel
-
-    var ddo = {};
-
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-
-    ddo.scope = {
-      title: '@'
+.directive('simplePanel', function(){//panel
+    return{
+        restrict: "AE",
+        transclude: true,
+        scope: {
+            title: '@'
+        },
+        templateUrl: appHelper.directiveDir +  '/panels/views/simple-panel.html'
     }
-    ddo.templateUrl = appHelper.directiveDir +  '/panels/views/simple-panel.html';
-
-    return ddo;
-
-  })
-  .directive('simplePanelRow', function(){//panel + row
-
-    var ddo = {};
-
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-
-    ddo.scope = {
-      title: '@'
+})
+.directive('simplePanelRow', function(){//panel + row
+    return{
+        restrict: "AE",
+        transclude: true,
+        scope: {
+            title: '@'
+        },
+        templateUrl: appHelper.directiveDir +  '/panels/views/simple-panel-row.html'
     }
-    ddo.templateUrl = appHelper.directiveDir +  '/panels/views/simple-panel-row.html';
-
-    return ddo;
-
-  })
-  .directive('panel', function(){
-    var ddo = {};
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-
-    ddo.template = '<div class="panel panel-piluku" ng-transclude></div>';
-
-    return ddo;
-  });
+})
+.directive('panel', function(){
+    return{
+        restrict: "AE",
+        transclude: true,
+        template: '<div class="panel panel-piluku" ng-transclude></div>'
+    }
+});

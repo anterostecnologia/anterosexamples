@@ -1,11 +1,11 @@
 angular.module('columns', [])
-  .directive('columnsSeparation', function(){
-    var ddo = {};
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-    ddo.scope = {
-      columns: '@',
-    };
-    ddo.template = '<div class="col-md-{{columns}}" ng-transclude></div>';
-    return ddo;
-  });
+.directive('columnsSeparation', function(){
+    return{
+        restrict: "AE",
+        transclude: true,
+        scope: {
+            columns: '@',
+        },
+        template: '<div class="col-md-{{columns}}" ng-transclude></div>'
+    }
+});

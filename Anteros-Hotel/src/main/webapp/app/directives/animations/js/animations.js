@@ -1,9 +1,8 @@
 angular.module('animations', [])
-  .directive('animatedFadeInUpBig', function(){
-    var ddo = {};
-
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-    ddo.template = '<div class="animated fadeInUpBig" ng-transclude></div>';
-    return ddo;
-  });
+.directive('animatedFadeInUpBig', function(){
+    return{
+        restrict: "AE",
+        transclude: true,
+        template: '<div class="animated fadeInUpBig" ng-transclude></div>'
+    }
+});

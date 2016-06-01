@@ -93,6 +93,16 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
               ASSETS.js('layouts','layouts'),
 
               /* **** All Directives *** */
+              ASSETS.jsDirective('menu', 'menu-left-bar'),
+              ASSETS.jsDirective('panels', 'panels'),
+              ASSETS.jsDirective('rows', 'rows'),
+              ASSETS.jsDirective('animations', 'animations'),
+              ASSETS.jsDirective('columns', 'columns'),
+              ASSETS.jsDirective('links', 'links'),
+              ASSETS.jsDirective('buttons', 'buttons'),
+              ASSETS.jsDirective('alerts', 'basic-alerts'),
+              ASSETS.jsDirective('alerts', 'dismissable-alerts'),
+              ASSETS.jsDirective('alerts', 'dark-alerts'),
 
               ASSETS.core.core,
             ]);
@@ -386,28 +396,6 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
             }
           }
       })
-
-      .state("app.anteros-basic-alerts", {
-        url: "/anteros-basic-alerts",
-        templateUrl: appHelper.pageView('alerts','basic'),
-        resolve:{
-          resources: function($ocLazyLoad){
-            return $ocLazyLoad.load([
-            //All Directives
-            ASSETS.jsDirective('panels', 'panels'),
-            ASSETS.jsDirective('rows', 'rows'),
-            ASSETS.jsDirective('animations', 'animations'),
-            ASSETS.jsDirective('columns', 'columns'),
-            ASSETS.jsDirective('links', 'links'),
-            ASSETS.jsDirective('buttons', 'buttons'),
-            ASSETS.jsDirective('alerts', 'basic-alerts'),
-            ASSETS.jsDirective('alerts', 'dismissable-alerts'),
-            ASSETS.jsDirective('alerts', 'dark-alerts'),
-            ]);
-          }
-        }
-      })
-
 
       .state("app.progress-bars", {
         url: "/progress-bars",
@@ -879,6 +867,24 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         url: "/panels",
         templateUrl: appHelper.componentView('ui-elements','panels'),
       })
+
+      /*********************************************/
+      /**************Anteros APP Router*************/
+      /*********************************************/
+
+      /****************Alert Basic******************/
+      .state("app.anteros-basic-alerts", {
+        url: "/anteros-basic-alerts",
+        templateUrl: appHelper.pageView('alerts','basic'),
+      })
+
+      /****************Alert Basic******************/
+      .state("app.anteros-menu", {
+        url: "/anteros-menu",
+        templateUrl: appHelper.pageView('menu','menu'),
+      })
+
+
 
       /************* about *************/
       .state('about', {

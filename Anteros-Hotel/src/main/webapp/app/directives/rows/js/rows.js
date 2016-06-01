@@ -1,13 +1,8 @@
 angular.module('rows', [])
-  .directive('row', function(){//panel
-
-    var ddo = {};
-
-    ddo.restrict = "AE";
-    ddo.transclude = true;
-
-    ddo.templateUrl = appHelper.directiveDir +  '/rows/views/row.html';
-
-    return ddo;
-
-  });
+.directive('row', function(){
+    return{
+        restrict: "AE",
+        transclude: true,
+        templateUrl: appHelper.directiveDir +  '/rows/views/row.html'
+    }
+});
