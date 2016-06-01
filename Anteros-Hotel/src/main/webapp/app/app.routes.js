@@ -16,7 +16,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
 )
 
 .constant('ASSETS', {
-  'core' : 
+  'core' :
   {
     'core' : 'assets/js/core.js',
     'liveTile' : 'assets/js/MetroJs.lt.js',
@@ -38,6 +38,12 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
   css : function(moduleName,fileName)
   {
       return appHelper.componentsDir + '/' + moduleName + '/css/' + fileName + '.css';
+  },
+  jsDirective: function(directiveName, fileName){
+    return appHelper.directiveDir + '/' + directiveName + '/js/' + fileName + '.js';
+  },
+  cssDirective: function(directiveName, fileName){
+    return appHelper.directiveDir + '/' + directiveName + '/css/' + fileName + '.css';
   }
 })
 
@@ -54,7 +60,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
       /********************************/
       /*** Redirects and Otherwise ****/
       /********************************/
-      
+
       // Use $urlRouterProvider to configure any redirects (when) and invalid urls (otherwise).
       $urlRouterProvider
 
@@ -85,6 +91,9 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
             return $ocLazyLoad.load([
               ASSETS.js('layouts','jquery.nicescroll.min'),
               ASSETS.js('layouts','layouts'),
+
+              /* **** All Directives *** */
+
               ASSETS.core.core,
             ]);
           },
@@ -220,7 +229,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
 
       })
 
-  
+
       /************* Piluku Premium *************/
       .state("app.tasks", {
         url: "/tasks",
@@ -349,6 +358,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
               ASSETS.css('piluku-premium','gallery'),
               ASSETS.css('piluku-premium','animated-masonry-gallery'),
               ASSETS.css('piluku-premium','rotated-gallery'),
+
             ]);
           },
         }
@@ -370,12 +380,34 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
           resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('alerts','sweetalert'),    
+                ASSETS.css('alerts','sweetalert'),
                 ASSETS.js('alerts','sweetalert.min'),
               ]);
             }
           }
       })
+
+      .state("app.anteros-basic-alerts", {
+        url: "/anteros-basic-alerts",
+        templateUrl: appHelper.pageView('alerts','basic'),
+        resolve:{
+          resources: function($ocLazyLoad){
+            return $ocLazyLoad.load([
+            //All Directives
+            ASSETS.jsDirective('panels', 'panels'),
+            ASSETS.jsDirective('rows', 'rows'),
+            ASSETS.jsDirective('animations', 'animations'),
+            ASSETS.jsDirective('columns', 'columns'),
+            ASSETS.jsDirective('links', 'links'),
+            ASSETS.jsDirective('buttons', 'buttons'),
+            ASSETS.jsDirective('alerts', 'basic-alerts'),
+            ASSETS.jsDirective('alerts', 'dismissable-alerts'),
+            ASSETS.jsDirective('alerts', 'dark-alerts'),
+            ]);
+          }
+        }
+      })
+
 
       .state("app.progress-bars", {
         url: "/progress-bars",
@@ -398,7 +430,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
           resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.js('notifications','jquery.gritter'),    
+                ASSETS.js('notifications','jquery.gritter'),
                 ASSETS.js('notifications','jquery.noty'),
                 ASSETS.js('notifications','layouts/bottom'),
                 ASSETS.js('notifications','layouts/bottomCenter'),
@@ -430,7 +462,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('tree-view','jtree'),    
+                ASSETS.css('tree-view','jtree'),
                 ASSETS.js('tree-view','tree'),
               ]);
             }
@@ -448,13 +480,13 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('sliders','pick-a-color-1.2.3.min'),    
-                ASSETS.css('sliders','colpick'),    
-                ASSETS.css('sliders','tinycolorpicker'),    
-                ASSETS.css('sliders','jquery.datetimepicker'),    
-                ASSETS.css('sliders','range-slider/ion.rangeSlider'),    
-                ASSETS.css('sliders','range-slider/ion.rangeSlider.skinFlat'),    
-                ASSETS.css('sliders','range-slider/normalize'),    
+                ASSETS.css('sliders','pick-a-color-1.2.3.min'),
+                ASSETS.css('sliders','colpick'),
+                ASSETS.css('sliders','tinycolorpicker'),
+                ASSETS.css('sliders','jquery.datetimepicker'),
+                ASSETS.css('sliders','range-slider/ion.rangeSlider'),
+                ASSETS.css('sliders','range-slider/ion.rangeSlider.skinFlat'),
+                ASSETS.css('sliders','range-slider/normalize'),
                 ASSETS.js('sliders','range-slider/ion.rangeSlider'),
                 ASSETS.js('sliders','pick-a-color/pick-a-color-1.2.3.min'),
                 ASSETS.js('sliders','pick-a-color/tinycolor-0.9.15.min'),
@@ -522,7 +554,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
        resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                // ASSETS.css('tree-view','jtree'),    
+                // ASSETS.css('tree-view','jtree'),
                 ASSETS.css('file-manager','elfinder.min'),
                 ASSETS.css('file-manager','elfinder.theme'),
                 ASSETS.js('file-manager','snap'),
@@ -568,10 +600,10 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.js('tables','jquery.dataTables.min'), 
-                ASSETS.js('tables','bootstrap-datatables'), 
-                ASSETS.js('tables','mindmup-editabletable'), 
-                ASSETS.js('tables','numeric-input-example'), 
+                ASSETS.js('tables','jquery.dataTables.min'),
+                ASSETS.js('tables','bootstrap-datatables'),
+                ASSETS.js('tables','mindmup-editabletable'),
+                ASSETS.js('tables','numeric-input-example'),
               ]);
             }
           }
@@ -583,9 +615,9 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.js('forms','dropzone-file-upload/jquery.fileupload'), 
+                ASSETS.js('forms','dropzone-file-upload/jquery.fileupload'),
                 ASSETS.js('forms','dropzone-file-upload/jquery.iframe-transport'),
-                ASSETS.js('forms','dropzone-file-upload/jquery.knob'), 
+                ASSETS.js('forms','dropzone-file-upload/jquery.knob'),
               ]);
             }
           }
@@ -597,7 +629,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.js('forms','form-validation/bootstrap-filestyle'), 
+                ASSETS.js('forms','form-validation/bootstrap-filestyle'),
                 ASSETS.js('forms','form-validation/jquery.form-validator'),
               ]);
             }
@@ -610,8 +642,8 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('forms','prettify'), 
-                ASSETS.js('forms','form-wizard/jquery.bootstrap.wizard'), 
+                ASSETS.css('forms','prettify'),
+                ASSETS.js('forms','form-wizard/jquery.bootstrap.wizard'),
                 ASSETS.js('forms','form-wizard/prettify'),
               ]);
             }
@@ -635,7 +667,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','signup'), 
+                ASSETS.css('utility','signup'),
               ]);
             }
           }
@@ -647,7 +679,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','signup2'), 
+                ASSETS.css('utility','signup2'),
               ]);
             }
           }
@@ -659,7 +691,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','signin'), 
+                ASSETS.css('utility','signin'),
               ]);
             }
           }
@@ -671,7 +703,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','signin2'), 
+                ASSETS.css('utility','signin2'),
               ]);
             }
           }
@@ -683,7 +715,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','signin'), 
+                ASSETS.css('utility','signin'),
               ]);
             }
           }
@@ -695,7 +727,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','lock'), 
+                ASSETS.css('utility','lock'),
               ]);
             }
           }
@@ -707,7 +739,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('utility','lock-screen2'), 
+                ASSETS.css('utility','lock-screen2'),
               ]);
             }
           }
@@ -771,14 +803,14 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
         resolve: {
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
-                ASSETS.css('nestable-lists','nestable'),    
-                ASSETS.css('nestable-lists','sortable/app'),    
-                ASSETS.css('nestable-lists','sortable/ply'),   
-                ASSETS.js('nestable-lists','nestable-lists/jquery.nestable'), 
-                ASSETS.js('nestable-lists','sortable/Sortable'), 
-                ASSETS.js('nestable-lists','Ply.min'), 
-                ASSETS.js('nestable-lists','sortable/ng-sortable'), 
-                // ASSETS.js('nestable-lists','sortable/st/app'), 
+                ASSETS.css('nestable-lists','nestable'),
+                ASSETS.css('nestable-lists','sortable/app'),
+                ASSETS.css('nestable-lists','sortable/ply'),
+                ASSETS.js('nestable-lists','nestable-lists/jquery.nestable'),
+                ASSETS.js('nestable-lists','sortable/Sortable'),
+                ASSETS.js('nestable-lists','Ply.min'),
+                ASSETS.js('nestable-lists','sortable/ng-sortable'),
+                // ASSETS.js('nestable-lists','sortable/st/app'),
               ]);
             }
           }
@@ -791,7 +823,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
                 ASSETS.js('charts','chartist.min'),
-                
+
               ]);
             }
           }
@@ -804,7 +836,7 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
             resources: function($ocLazyLoad){
               return $ocLazyLoad.load([
                 ASSETS.js('charts','chartist.min'),
-                
+
               ]);
             }
           }

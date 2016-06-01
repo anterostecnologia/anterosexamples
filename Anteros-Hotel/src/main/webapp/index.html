@@ -11,16 +11,17 @@
     <link rel="stylesheet" type="text/css" href="assets/css/loading-bar.css">
     <link rel="stylesheet" type="text/css" href="assets/css/material.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-  
+
     <!-- Include Jquery file -->
     <script src="assets/js/jquery.js"></script>
      <script type="text/javascript" src="assets/js/materialize.min.js"></script>
      <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-   
+
     <!-- // <script src="assets/js/bootstrap.js"></script> -->
     <script type="text/javascript">
     appHelper   = {
-          
+
+          <!-- Import component -->
           componentsDir: 'app/modules',
           assetsDir: 'assets',
 
@@ -37,6 +38,33 @@
             return this.componentsDir + '/' + componentName + '/data/' + dataName +'.json' ;
           },
 
+          <!-- Import directive -->
+          directiveDir: 'app/directives',
+
+          directiveJs: function(directiveName, jsName){
+            return this.directiveDir + '/' + directiveName + '/js/' + jsName + '.js';
+          },
+          directiveCss: function(directiveName, jsName){
+            return this.directiveDir + '/' + directiveName + '/css/' + jsName + '.css';
+          },
+
+          <!-- Import pages -->
+          pagesDir: 'app/pages',
+
+          pageView: function(pageName,viewName)
+          {
+            return this.pagesDir + '/' + pageName + '/views/' + viewName +'.html' ;
+          },
+          pageJs: function(pageName,jsName)
+          {
+            return this.pagesDir + '/' + pageName + '/js/' + jsName +'.js' ;
+          },
+          pageData: function(pageName,dataName)
+          {
+            return this.pagesDir + '/' + pageName + '/data/' + dataName +'.json' ;
+          },
+
+          <!-- Path -->
           assetPath: function(file_path)
           {
             return this.assetsDir + '/' + file_path;
@@ -47,10 +75,10 @@
     <title>Piluku - Twitter Bootstrap Admin Template </title>
   </head>
   <body ng-controller="MainCtrl">
-   
+
   <div class="wrapper" ng-class="{'mini-bar': $storage.miniSidebar}">
-  
-  <ui-view></ui-view>  
+
+  <ui-view></ui-view>
   </div>
   <!-- wrapper -->
 
@@ -61,7 +89,7 @@
     <script src="assets/libs/angular-ui.js"></script>
     <script src="assets/libs/ocLazyLoad.js"></script>
     <script src="assets/js/loading-bar.js"></script>
-    
+
     <script src="app/modules/maps/js/lodash.js"></script>
     <script src="app/modules/maps/js/angular-google-maps.js"></script>
 
@@ -81,11 +109,11 @@
     <!-- // <script src="assets/js/core.js"></script>  -->
 
     <!-- contacts.js declares the PilukuApp.contacts module, and adds a number of contact
-         related states 
+         related states
     -->
     <script src="app/modules/contacts/js/contacts.js"></script>
 
-    <!-- contacts-service.js, and utils-service.js define services for use by the 
+    <!-- contacts-service.js, and utils-service.js define services for use by the
          PilukuApp.contacts module.
     -->
     <script src="app/modules/contacts/js/contacts-service.js"></script>
