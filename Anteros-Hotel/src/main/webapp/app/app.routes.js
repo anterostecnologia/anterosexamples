@@ -94,6 +94,9 @@ angular.module('PilukuApp', [ 'ui.router', 'ngAnimate', 'PilukuApp.controllers',
 
               /* **** All Directives *** */
               ASSETS.jsDirective('menu', 'menu-left-bar'),
+              ASSETS.jsDirective('menu', 'menu-top-bar'),
+              ASSETS.jsDirective('inputs', 'inputs'),
+              /*ASSETS.jsDirective('forms', 'forms'),*/
               ASSETS.jsDirective('panels', 'panels'),
               ASSETS.jsDirective('rows', 'rows'),
               ASSETS.jsDirective('animations', 'animations'),
