@@ -3,9 +3,8 @@ angular.module('inputs', [])
     return{
         restrict: "AE",
         replace: true,
-        transclude: true,
         scope:{
-            ngModel: '@'
+        	modelo:'='
         },
         templateUrl: appHelper.directiveDir + '/inputs/views/input-search.html'
     }

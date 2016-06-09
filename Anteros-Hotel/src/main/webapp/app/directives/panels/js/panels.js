@@ -4,9 +4,9 @@ angular.module('panels', [])
         restrict: "AE",
         transclude: true,
         scope: {
-            title: '@'
+            title: '@',
         },
-        templateUrl: appHelper.directiveDir +  '/panels/views/simple-panel.html'
+        templateUrl: appHelper.directiveDir +  '/panels/views/simple-panel.html',
     }
 })
 .directive('simplePanelRow', function(){//panel + row

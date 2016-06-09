@@ -1,12 +1,12 @@
 angular.module('menu-left-bar', [])
 .directive('menuLeftBar', function(){
     return{
-        restrict: "AE",
+        restrict: "E",
         transclude: true,
         scope: {
             title: '@',
             directoryLogo: '@',
-            id: '@'
+            id: '@',
         },
         templateUrl: appHelper.directiveDir + '/menu/views/menu-left-bar.html'
     }
