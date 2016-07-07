@@ -55,9 +55,15 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>4.12</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.2.0.RELEASE</version>
+		</dependency>
+
 		<!-- ANTEROS -->
 		<dependency>
 			<groupId>br.com.anteros</groupId>
@@ -145,7 +151,7 @@
 			<artifactId>Anteros-JSONDoc-UI-Webjar</artifactId>
 			<version>[1.0.0,)</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>br.com.anteros</groupId>
 			<artifactId>Anteros-Generator-Maven-Plugin</artifactId>
@@ -157,7 +163,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -210,7 +216,7 @@
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-						    <enabled>false</enabled>
+							<enabled>false</enabled>
 							<sourceDestination>${basedir}/src/main/java</sourceDestination>
 							<packageDestination>br.com.anteros.demo.hotel.teste</packageDestination>
 							<includeSecurity>true</includeSecurity>
@@ -221,15 +227,15 @@
 							<generateSwaggerConfiguration>true</generateSwaggerConfiguration>
 							<generateJSONDocConfiguration>true</generateJSONDocConfiguration>
 							<packageScanComponentsList>
-							   <package>br.com.anteros.demo.hotel.repository.impl</package>
-							   <package>br.com.anteros.demo.hotel.service.impl</package>
-		                       <package>br.com.anteros.demo.hotel.controller</package>
+								<package>br.com.anteros.demo.hotel.repository.impl</package>
+								<package>br.com.anteros.demo.hotel.service.impl</package>
+								<package>br.com.anteros.demo.hotel.controller</package>
 							</packageScanComponentsList>
 							<packageScanEntity>br.com.anteros.demo.hotel.model*</packageScanEntity>
 							<propertiesFile>WEB-INF/anterosHotel.properties</propertiesFile>
 							<packageScanJSONDocList>
-							   <package>br.com.anteros.demo.hotel.controller</package>
-							   <package>br.com.anteros.demo.hotel.model</package>
+								<package>br.com.anteros.demo.hotel.controller</package>
+								<package>br.com.anteros.demo.hotel.model</package>
 							</packageScanJSONDocList>
 						</configuration>
 					</execution>
@@ -238,7 +244,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
