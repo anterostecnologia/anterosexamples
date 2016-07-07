@@ -55,8 +55,13 @@ public class AnterosHotelSecurityConfiguration extends AnterosSpringSecurityConf
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/resources/**").permitAll().antMatchers("/login*").permitAll()
-				.antMatchers("/**").authenticated().and().formLogin().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/index.html").permitAll()
+		                        .antMatchers("/assets/**").permitAll()
+		                        .antMatchers("/app/**").permitAll()
+		                        .antMatchers("/login*").permitAll()
+				                .anyRequest().authenticated().and()
+	        .formLogin().and()
+	        .httpBasic();
 	}
 
 }
