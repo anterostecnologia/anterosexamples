@@ -1,0 +1,35 @@
+<div ng-controller="HotelController">
+	<animated-fade-in-up-big>
+	    <simple-panel title="Hotéis">
+    		<row>
+    		<button-primary name="Add"></button-primary>  <input-search modelo="filtro"></input-search>
+    		</row>
+	        <columns-separation columns=12>
+	            <basic-table>
+	                <header-table>
+	                    <header-column value="#"></header-column>
+	                    <header-column value="Nome"></header-column>
+	                    <header-column value="Telefone"></header-column>
+	                    <header-column value="Endereço"></header-column>
+	                    <header-column value="Cidade"></header-column>
+	                    <header-column value="Estado"></header-column>
+	                    <header-column value="CEP"></header-column>
+	                </header-table>
+	                <body-table>
+	                    <line-table ng-repeat="hotel in hoteis | filter: filtro">
+		                    <line-column>{{hotel.id}}</line-column>
+		                    <line-column>{{hotel.nome}}</line-column>
+		                    <line-column>{{hotel.telefone}}</line-column>
+		                    <line-column>{{hotel.endereco}}</line-column>
+		                    <line-column>{{hotel.cidade}}</line-column>
+		                    <line-column>{{hotel.estado}}</line-column>
+		                    <line-column>{{hotel.cep}}</line-column>
+		                    <line-column><a href="#" class="btn btn-green"><i class="ion ion-edit"></i></a></line-column>
+		                    <line-column><a href="#" class="btn btn-red"><i class="ion ion-ios-trash-outline"></i></a></line-column>
+	                	</line-table>
+	                </body-table>
+	            </basic-table>
+	        </columns-separation>
+	    </simple-panel>
+	</animated-fade-in-up-big>
+</div>

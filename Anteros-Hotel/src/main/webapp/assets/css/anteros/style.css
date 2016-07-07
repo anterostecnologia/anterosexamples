@@ -1,0 +1,21 @@
+.left-bar .anteros-logo-holder,
+.side-bar .anteros-logo-holder {
+  float: none !important;
+  text-align: center !important;
+  margin: 0 auto;
+}
+.wrapper.mini-bar .left-bar .admin-logo .anteros-logo-holder {
+  display: none;
+}
+.left-bar .admin-logo .anteros-logo-holder {
+    display: none;
+ }
+ .left-bar .admin-logo .anteros-logo-holder,
+ .side-bar .admin-logo .anteros-logo-holder {
+   width: 160px;
+   padding-top: 10px;
+ }
+ .left-bar .admin-logo .anteros-logo-holder .logo,
+ .side-bar .admin-logo .anteros-logo-holder .logo {
+   width: 100%;
+ }

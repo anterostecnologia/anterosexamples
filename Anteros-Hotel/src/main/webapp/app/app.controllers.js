@@ -18,7 +18,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     // $scope.$storage.miniSidebar = argument;
       console.log(argument);
     }
-    
+
     $ocLazyLoad.load([
         ASSETS.js('dashboard','layout-main'),
     ]);
@@ -34,12 +34,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Dashboard Controller */
 .controller("dashboardCtrl", function($scope, $http){
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -51,11 +51,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -70,22 +70,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -238,7 +238,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -265,7 +265,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -322,12 +322,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Tasks Controller */
 .controller('horizontalMenuCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS, $http, $localStorage) {
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -339,11 +339,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -358,22 +358,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -526,7 +526,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -553,7 +553,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -609,12 +609,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Tasks Controller */
 .controller('collapsedCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS, $http, $localStorage) {
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -626,11 +626,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -645,22 +645,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -813,7 +813,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -840,7 +840,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -896,12 +896,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Tasks Controller */
 .controller('menuWithHeaderCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS, $http, $localStorage) {
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -913,11 +913,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -932,22 +932,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -1100,7 +1100,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -1127,7 +1127,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -1183,12 +1183,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Tasks Controller */
 .controller('rightSidebarCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS, $http, $localStorage) {
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -1200,11 +1200,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -1219,22 +1219,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -1387,7 +1387,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -1414,7 +1414,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -1470,12 +1470,12 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 /* Tasks Controller */
 .controller('boxedLayoutCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS, $http, $localStorage) {
   var dashboardCtrl = this;
-  
+
   $('ul.tabs').tabs();
 
   $('.counter').each(count);
 
-  function count(options) 
+  function count(options)
   {
       var $this = $(this);
       options = $.extend({}, options || {}, $this.data('countToOptions') || {});
@@ -1487,11 +1487,11 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     var len = $('.list-todo li').prevAll().length+1;
     if(e.keyCode==13){
       e.preventDefault();
-      $('.add-to-input').before('<li class="list-group-item">' + 
-        '<div class="ms-hover">' + 
-        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' + 
-        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' + 
-        '</div>' + 
+      $('.add-to-input').before('<li class="list-group-item">' +
+        '<div class="ms-hover">' +
+        '<input type="checkbox" class="mark-complete" id="todo'+len+'">' +
+        '<label for="todo'+len+'"><span></span>' + $(this).val() + '</label>' +
+        '</div>' +
         '</li>');
       $(this).val("");
 
@@ -1506,22 +1506,22 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
     else
     {
-      $(this).closest('.list-group-item').removeClass('completed'); 
+      $(this).closest('.list-group-item').removeClass('completed');
     }
   });
 
   // Todo mark all list items
-  $('.mark-all').click(function () {    
+  $('.mark-all').click(function () {
     if(this.checked) { // check select status
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = true;  //select all checkboxes with class "checkbox"   
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');            
+                this.checked = true;  //select all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).addClass('completed');
             });
         }else{
             $('input:checkbox').each(function() { //loop through each checkbox
-                this.checked = false; //deselect all checkboxes with class "checkbox"  
-                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');                     
-            });         
+                this.checked = false; //deselect all checkboxes with class "checkbox"
+                $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).removeClass('completed');
+            });
         }
     // $('input:checkbox').prop('checked', this.checked),$( '.todo_widget .list-group-item' ).toggleClass('completed');
   });
@@ -1674,7 +1674,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     if(data.type === 'bar') {
       data.element.attr({
         style: 'stroke-width: 6px'
-      });    
+      });
     }
   });
 
@@ -1701,7 +1701,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
     }
   });
 
-  // Sparkline Charts 
+  // Sparkline Charts
   function defaultChartConfig(containerId, data) {
     nv.addGraph(function() {
 
@@ -1765,7 +1765,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 .controller('galleryCtrl', ['$scope','$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
     $ocLazyLoad.load([
         ASSETS.js('piluku-premium','gallery-ctrl'),
-    ]);    
+    ]);
 }])
 
 // Sweet alerts Controller
@@ -1806,19 +1806,19 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 // toolTips Controller
 .controller('toolTipsCtrl', ['$scope', function ($scope) {
     $("a").tooltip();
-        
+
     $("[data-toggle=popover]").popover();
 }])
 
 // Right Sidebar Controller
 .controller('rightSidebarCtrl', ['$scope', function ($scope) {
-  $('ul.tabs').tabs();        
+  $('ul.tabs').tabs();
 }])
 
 // Line area charts
 .controller('lineAreaChartsCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
-    
+
+
     $ocLazyLoad.load([
       ASSETS.js('charts','chartist/line-area-chart'),
       ASSETS.js('charts','chartist/bipolar-line-area'),
@@ -1833,8 +1833,8 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // Bar charts
 .controller('barChartsCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
-    
+
+
     $ocLazyLoad.load([
       ASSETS.js('charts','chartist.min'),
       ASSETS.js('charts','chartist/bi-polar-bar-interpolated'),
@@ -1850,8 +1850,8 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // Pie charts
 .controller('pieChartsCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
-    
+
+
     $ocLazyLoad.load([
       ASSETS.js('charts','nvd3/src/models/legend'),
       ASSETS.js('charts','nvd3/src/models/pie'),
@@ -1863,7 +1863,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
       ASSETS.js('charts','charts/jquery.flot.stack'),
       ASSETS.js('charts','charts/jquery.flot.pie.min'),
       ASSETS.js('charts','charts/jquery.flot.selection'),
-      
+
       ASSETS.js('charts','jquery.easing.min'),
       ASSETS.js('charts','jquery.easypiechart.min'),
       ASSETS.js('charts','charts/pie-charts-custom'),
@@ -1873,8 +1873,8 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // NVD3 charts
 .controller('nvd3ChartsCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
-    
+
+
     $ocLazyLoad.load([
       ASSETS.js('charts','nvd3/src/models/legend'),
       ASSETS.js('charts','nvd3/src/models/pie'),
@@ -1887,7 +1887,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // NVD3 charts
 .controller('basicMapsCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
+
     $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     $scope.options = {scrollwheel: false};
 
@@ -2077,7 +2077,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // masonry gallery
 .controller('masonryCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
+
     $ocLazyLoad.load([
         ASSETS.js('piluku-premium','gallery-masonry'),
     ]);
@@ -2086,7 +2086,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
 
 // masonry gallery
 .controller('rotatedGalleryCtrl', ['$scope', '$ocLazyLoad', 'ASSETS', function ($scope, $ocLazyLoad, ASSETS) {
-    
+
     $ocLazyLoad.load([
         ASSETS.js('piluku-premium','gallery/rotated-gallery'),
     ]);
@@ -2118,7 +2118,7 @@ myApp.controller('MainCtrl', ['$scope','cfpLoadingBar', '$localStorage','$ocLazy
   $ocLazyLoad.load([
       ASSETS.js('forms','dropzone-fileupload'),
   ]);
-  
+
 }])
 
 // formValidation Controller

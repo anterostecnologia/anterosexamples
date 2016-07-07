@@ -1,0 +1,11 @@
+<div class="left-bar" ng-controller="leftSideBarCtrl">
+    <div class="admin-logo">
+        <div class="logo-holder pull-left">
+            <img class="logo" ng-src="{{directoryLogo}}" alt="{{title}}">
+        </div>
+        <!-- logo-holder -->
+    <a href="#"  ng-click="$storage.miniSidebar = $storage.miniSidebar ? false : true" class="menu-bar  pull-right"><i class="ti-menu"></i></a>
+
+    </div>
+    <ul class="list-unstyled menu-parent" id="{{id}}" ng-transclude></ul>
+</div>
